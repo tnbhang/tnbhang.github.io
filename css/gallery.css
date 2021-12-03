@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Chia cột*/
+.container{
+	width: 60%;
+	margin: auto;
+}
+.container-50{
+	width: 50%;
+	margin: auto;
+}
+.container-80{
+	width: 80%;
+	margin: auto;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class^="col-"]{
+	float: left;
+	padding: 15px;
+}
+
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.row::after {
+	content: "";
+	clear: both;
+	display: table;
+}
+
+
+/*Định dạng sẵn*/
+.d-flex{display: flex}
+.d-block{display: block}
+
+.justify-center{justify-content: center}
+.justify-start{justify-content: flex-start}
+.justify-end{justify-content: flex-end}
+.justify-between{justify-content: space-between}
+.justify-around{justify-content: space-around}
+
+.align-items-center{align-items: center}
+.align-items-start{align-items: flex-start}
+.align-items-end{align-items: flex-end}
+.align-items-stretch{align-items: stretch}
+
+.align-self-center{align-self: center}
+.align-self-end{align-self: flex-end}
+
+.row-reverse{flex-direction: row-reverse}
+.column-reverse{flex-direction: column-reverse}
+.column{flex-direction: column}
+
+.float-left{float: left}
+.float-right{float: right}
+.float-none{float: none}
+
+.row-wrap{flex-flow: wrap}
+
+.my-10{margin-bottom: 10px; margin-top: 10px}
+.mx-10{margin-left:10px; margin-right: 10px}
+.my-30{margin-bottom: 30px; margin-top: 30px}
+.my-50{margin-bottom: 50px; margin-top: 50px}
+.mb-10{margin-bottom: 10px}
+.ml-10{margin-left: 10px}
+.mr-10{margin-right: 10px}
+.ml-15{margin-left: 15px}
+.mr-15{margin-right: 15px}
+.ml-30{margin-left: 30px}
+.mx-auto{margin-left: auto; margin-right: auto}
+.m-30{margin: 30px}
+.m-10{margin: 10px}
+.m-0{margin: 0}
+
+.pt-20{padding-top: 20px}
+.pb-20{padding-bottom: 20px}
+.pl-20{padding-left: 20px}
+.pr-20{padding-right: 20px}
+.p-15{padding: 15px}
+.p-20{padding: 20px}
+.p-30{padding: 30px}
+.p-0{padding: 0}
+
+.img-100{width: 100%; height: auto}
+.img-50{width: 50%; height: auto}
+.img-45{width: 45%; height: auto}
+.img-center{display: block; margin: auto}
+
+.text-center{text-align: center}
+.text-left{text-align: left}
+.text-right{text-align: right}
+.text-parent{text-align: match-parent}
+
+.clearfix{clear: both}
+
+.w-100{width: 100%}
+.w-80{width: 80%}
+.w-60{width: 60%}
+.w-50{width: 50%}
+.w-40{width: 40%}
+.w-30{width: 30%}
+.w-20{width: 20%}
+.h-100{height: 100%}
+
+
+.offset-1 {margin-left: 8.33%;}
+.offset-2 {margin-left: 16.66%;}
+.offset-3 {margin-left: 25%;}
+
+
+.fab.fa-facebook-square{color: #3B5998;}
+.fab.fa-google-plus-square{color: #DC4B3E}
+.fab.fa-twitter-square{color: #1DA1F2}
+.fab.fa-pinterest-square{color: #E60023}
+.fab.fa-linkedin{color: #0077B5}
+.fab.fa-whatsapp-square{color: #25D366}
+
+
+
+
+
+/*Bootstrap carousel*/
+.carousel{position:relative}
+
+.carousel-inner{position:relative;width:100%;overflow:hidden}
+
+.carousel-item{position:relative;display:none;-ms-flex-align:center;align-items:center;width:100%;transition:-webkit-transform .6s ease;transition:transform .6s ease;transition:transform .6s ease,-webkit-transform .6s ease;-webkit-backface-visibility:hidden;backface-visibility:hidden;-webkit-perspective:1000px;perspective:1000px}@media screen and (prefers-reduced-motion:reduce){.carousel-item{transition:none}}
+
+.carousel-item-next,.carousel-item-prev,.carousel-item.active{display:block}
+
+.carousel-item-next,.carousel-item-prev{position:absolute;top:0}
+
+.carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{-webkit-transform:translateX(0);transform:translateX(0)}
+
+@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.carousel-item-next.carousel-item-left,.carousel-item-prev.carousel-item-right{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}
+
+.active.carousel-item-right,.carousel-item-next{-webkit-transform:translateX(100%);transform:translateX(100%)}
+
+@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.active.carousel-item-right,.carousel-item-next{-webkit-transform:translate3d(100%,0,0);transform:translate3d(100%,0,0)}}.active.carousel-item-left,.carousel-item-prev{-webkit-transform:translateX(-100%);transform:translateX(-100%)}
+
+@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.active.carousel-item-left,.carousel-item-prev{-webkit-transform:translate3d(-100%,0,0);transform:translate3d(-100%,0,0)}}
+
+.carousel-fade .carousel-item{opacity:0;transition-duration:.6s;transition-property:opacity}
+
+.carousel-fade .carousel-item-next.carousel-item-left,.carousel-fade .carousel-item-prev.carousel-item-right,.carousel-fade .carousel-item.active{opacity:1}
+
+.carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-right{opacity:0}
+.carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-prev,.carousel-fade .carousel-item-next,.carousel-fade .carousel-item-prev,.carousel-fade .carousel-item.active{-webkit-transform:translateX(0);transform:translateX(0)}
+
+@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)){.carousel-fade .active.carousel-item-left,.carousel-fade .active.carousel-item-prev,.carousel-fade .carousel-item-next,.carousel-fade .carousel-item-prev,.carousel-fade .carousel-item.active{-webkit-transform:translate3d(0,0,0);transform:translate3d(0,0,0)}}
+
+.carousel-indicators{position:absolute;right:0;bottom:10px;left:0;z-index:15;display:-ms-flexbox;display:flex;-ms-flex-pack:center;justify-content:center;padding-left:0;margin-right:15%;margin-left:15%;list-style:none}
+
+.carousel-indicators li{position:relative;-ms-flex:0 1 auto;flex:0 1 auto;width:30px;height:3px;margin-right:3px;margin-left:3px;text-indent:-999px;cursor:pointer;background-color:rgba(255,255,255,.5)}
+
+.carousel-indicators li::before{position:absolute;top:-10px;left:0;display:inline-block;width:100%;height:10px;content:""}
+
+.carousel-indicators li::after{position:absolute;bottom:-10px;left:0;display:inline-block;width:100%;height:10px;content:""}
+
+.carousel-indicators .active{background-color:#fff}
+
+.carousel-caption{position:absolute;right:15%;bottom:20px;left:15%;z-index:10;padding-top:20px;padding-bottom:20px;color:#fff;text-align:center}
+
+
+
+/*Định dạng nút chuyển slide trượt*/
+.carousel-control-next, .carousel-control-prev{
+	display: block;
+	min-width: 1px;
+	min-height: 1px;
+	opacity: 1;
+}
