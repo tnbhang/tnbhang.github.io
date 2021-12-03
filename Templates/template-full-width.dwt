@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>LOGIO Transportation</title>
+<!-- TemplateEndEditable -->
+<link rel="stylesheet" href="../css/gallery.css" type="text/css">
+<link rel="stylesheet" href="../css/style-main.css" type="text/css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
+<link rel="shortcut icon" href="../images/logo-square.png" type="image/x-icon">
+<!-- TemplateBeginEditable name="head" -->
+
+<!-- TemplateEndEditable -->
+</head>
+
+<body>
+<header>
+	<div class="menu d-flex justify-center align-items-center">
+		<div class="logo">
+			<a href="../index.html" class="logo"><img src="../images/logo.png" alt=""></a>
+		</div>
+		<img src="../images/line-logo.png" alt="" style="width: 3px; margin: 10px">
+		<div class="lang">
+		  <a href="#"><i class="far fa-flag-usa"></i> English  <i class="fas fa-angle-down ml-10"></i></a>
+			<div class="lang-box">
+			  <a href="#">Tiếng Việt</a>
+			  <a href="#">한국인</a>
+			  <a href="#">日本語</a>
+			</div>
+		</div>
+		<ul>
+			<li><a href="../index.html"><i class="fas fa-home mr-10"></i>HOME</a></li>
+			<li><a href="../html/about.html">ABOUT</a></li>
+			<li><a href="../html/our-services.html">SERVICES<i class="fas fa-angle-down ml-10"></i></a>
+				<ul>
+					<li><a href="../html/services/service-1.html">Road Freight</a></li>
+					<li><a href="../html/services/service-2.html">Sea Freight</a></li>	
+					<li><a href="../html/services/service-3.html">Air Freight</a></li>	
+					<li><a href="../html/services/service-4.html">Packaging</a></li>
+					<li><a href="../html/services/service-5.html">Home Delivery</a></li>
+					<li><a href="../html/services/service-6.html">Supply Chain</a></li>
+				</ul>
+			</li>
+			<li><a href="../html/news.html">NEWS</a></li>
+			<li><a href="../html/contact.html">CONTACT</a></li>
+		</ul>
+		<a onClick="document.getElementById('login-form').style.display='block'" title="Login"><i class="fa fa-user btn-right"></i></a>
+		<a onClick="document.getElementById('search-box').style.display='block'" class="search-box">
+			<i class="fa fa-search btn-right"></i>
+		</a>
+	</div>
+	<div class="clearfix"></div>
+	<div style="height: 90px"></div>
+</header>
+<section id="search-box" >
+	<form name="search-box" action="../index.html">
+		<i class="far fa-box-check fa-5x"></i>
+		<h1>Track Your Shipment</h1>
+		<div class="search-box">
+			<input type="text" placeholder="Your Tracking ID">
+			<button class="btn-search"><i class="fa fa-search"></i></button>
+		</div>
+		<h2 class="text-center"><a href="../html/request.html">Any request?</a></h2>
+	</form>
+</section>
+<section id="login-form">
+	<div class="container">
+		<span onclick="document.getElementById('login-form').style.display='none'" class="close" title="Close">&times;</span>
+		<form action="../index.html">
+			<h1>LOGIN</h1>
+			<div class="form-group">
+				<i class="far fa-user"></i>
+				<input type="text" name="username" placeholder="User Name" title="Please fill in this field" required>
+			</div>
+			<div class="form-group">
+				<i class="far fa-key"></i>
+				<input type="password" name="password" placeholder="Password" id="password" title="Please fill in this field" required>
+				<span class="show-btn"><i class="far fa-eye" id="eye"></i></span>
+			</div>
+			<p id="warningCaps">Caps lock is ON!</p>
+			<label><input type="checkbox" checked>Remember password</label><br>
+			<div class="d-flex justify-center"><a>Forgot password?</a></div>
+			<input type="submit" value="SIGN IN" class="btn-get">
+			<p class="text-center">Not a member? <a href="../html/signup.html">Sign up now</a></p>
+		</form>
+	</div>
+</section>
+<!-- TemplateBeginEditable name="main-content" -->
+<main>
+	
+</main>
+<!-- TemplateEndEditable -->
+
+<footer>
+	<div class="banner-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 d-flex justify-between align-items-center">
+					<img src="../images/service-1.png" alt="">
+					<img src="../images/service-2.png" alt="">
+					<img src="../images/service-3.png" alt="">
+					<img src="../images/service-4.png" alt="">
+					<img src="../images/service-1.png" alt="">
+					<img src="../images/service-2.png" alt="">
+					<img src="../images/service-3.png" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row text-center">
+			<div class="col-3 text-left">
+				<a href="../index.html"><img src="../images/logo-white.png" alt=""></a>
+			</div>
+			<div class="col-3">
+				<i class="far fa-bell fa-4x"></i>
+				<h3>Want To Work With Us?</h3>
+				<a href="../html/request.html" class="read-more">Read more</a>
+			</div>
+			<div class="col-3">
+				<i class="far fa-comments fa-4x"></i>
+				<h3>Want To Work With Us?</h3>
+				<a href="../html/request.html" class="read-more">Read more</a>
+			</div>
+			<div class="col-3">
+				<i class="far fa-plane fa-4x"></i>
+				<h3>Want To Work With Us?</h3>
+				<a href="../html/request.html" class="read-more">Read more</a>
+			</div>
+		</div>
+		<div class="line"></div>
+		<div class="row">
+			<div class="col-3">
+				<h3>Company</h3>
+				<div class="short-line"></div>
+				<h6><a href="../html/about.html">About Company</a></h6>
+				<h6><a href="../html/about.html">Our History</a></h6>
+				<h6><a href="../html/about.html">Our Skills & Experiences</a></h6>
+				<h6><a href="../html/about.html">Company Achievement</a></h6>
+			</div>
+			<div class="col-3">
+				<h3>Quick Links</h3>
+				<div class="short-line"></div>
+				<h6><a href="../html/services/service-1.html">Road Freight</a></h6>
+				<h6><a href="../html/services/service-2.html">Sea Freight</a></h6>
+				<h6><a href="../html/services/service-3.html">Air Freight</a></h6>
+				<h6><a href="../html/news.html">News</a></h6>
+			</div>
+			<div class="col-3">
+				<h3>Contact Us</h3>
+				<div class="short-line"></div>
+				<h6><i class="far fa-phone-alt"></i><a>+012 345 567</a></h6>
+				<h6><i class="far fa-envelope-open"></i><a>support@gmail.com</a></h6>
+				<h6><i class="far fa-map-marked-alt"></i><a>North Avenue, Chicago, IL, 55030</a></h6>
+			</div>
+			<div class="col-3">
+				<h3>About Us</h3>
+				<div class="short-line"></div>
+				<h6>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolorem que laudantium, totam.</h6>
+				<div class="social">
+					<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+					<a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+					<a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.google.com/" target="_blank"><i class="fab fa-google-plus-g"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+</body>
+<!--<script src="https://code.jquery.com/jquery-3.6.0.js"></script>-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="../js/main.js"></script>
+</html>
