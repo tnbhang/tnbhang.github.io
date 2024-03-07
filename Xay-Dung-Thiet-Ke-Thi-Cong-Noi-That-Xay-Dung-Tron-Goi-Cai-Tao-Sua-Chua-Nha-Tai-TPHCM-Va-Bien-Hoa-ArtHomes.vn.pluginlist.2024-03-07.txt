@@ -1,0 +1,65 @@
+------------------------------------------------------------
+  Plugin list generated with BackWPup version: 4.0.3
+  http://backwpup.com
+  Blog Name: Xây Dựng Thiết Kế Thi Công Nội Thất, Xây Dựng Trọn Gói, Cải Tạo Sửa Chữa Nhà Tại TPHCM Và Biên Hòa - ArtHomes.vn
+  Blog URL: https://arthomes.vn
+  Generated on: 2024-03-07 10:57.34
+------------------------------------------------------------
+
+
+All plugin information:
+------------------------------
+Akismet Anti-Spam: Spam Protection (v.5.2) from Automattic - Anti Spam Team
+	https://akismet.com/
+ALD - Dropshipping and Fulfillment for AliExpress and WooCommerce (v.2.0.0) from VillaTheme(villatheme.com)
+	https://villatheme.com/extensions/aliexpress-dropshipping-and-fulfillment-for-woocommerce/
+Avada Builder (v.3.11.2) from ThemeFusion
+	https://avada.com
+Avada Core (v.5.11.2) from ThemeFusion
+	https://avada.com
+BackWPup (v.4.0.3) from WP MEDIA SAS
+	http://backwpup.com
+Button contact VR (v.4.4) from VirusTran
+	webvocuc.com
+EXMAGE - WordPress Image Links (v.1.0.16) from VillaTheme(villatheme.com)
+	https://villatheme.com/extensions/exmage-wordpress-image-links/
+Facebook Chat Plugin - Live Chat Plugin for WordPress (v.2.5) from Meta
+	
+Hello Dolly (v.1.7.2) from Matt Mullenweg
+	http://wordpress.org/plugins/hello-dolly/
+Hostinger (v.1.9.9) from Hostinger
+	https://hostinger.com
+LiteSpeed Cache (v.5.7.0.1) from LiteSpeed Technologies
+	https://www.litespeedtech.com/products/cache-plugins/wordpress-acceleration
+PixelYourSite (v.9.4.6) from PixelYourSite
+	http://www.pixelyoursite.com/
+Site Kit by Google (v.1.110.0) from Google
+	https://sitekit.withgoogle.com
+WooCommerce (v.8.3.0) from Automattic
+	https://woocommerce.com/
+Yoast SEO (v.21.2) from Team Yoast
+	https://yoa.st/1uj
+Yoast SEO Premium (v.21.2) from Team Yoast
+	https://yoa.st/2jc
+
+Active plugins:
+------------------------------
+ALD - Dropshipping and Fulfillment for AliExpress and WooCommerce
+Avada Builder
+Avada Core
+BackWPup
+Button contact VR
+EXMAGE - WordPress Image Links
+Hostinger
+LiteSpeed Cache
+PixelYourSite
+Site Kit by Google
+WooCommerce
+Yoast SEO
+Yoast SEO Premium
+
+Inactive plugins:
+------------------------------
+Akismet Anti-Spam: Spam Protection
+Facebook Chat Plugin - Live Chat Plugin for WordPress
+Hello Dolly
