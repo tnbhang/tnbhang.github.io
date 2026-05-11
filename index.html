@@ -384,9 +384,9 @@
             position: relative;
             width: 100%;
             padding-bottom: 66.67%;
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             border: 2px solid #d4af37;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
             transition: transform 0.3s ease;
         }
@@ -404,11 +404,11 @@
         .hg-image-overlay {
             position: absolute;
             bottom: 0; left: 0; width: 100%;
-            background: linear-gradient(to top, rgba(var(--htp-blue-rgb),0.9) 20%, transparent);
-            padding: 20px 10px 10px;
+            background: linear-gradient(to top, rgba(0,0,0,0.75) 20%, transparent);
+            padding: 10px 10px 5px;
             color: #fff;
             text-align: center;
-            font-size: .85rem;
+            font-size: .75rem;
             font-weight: 700;
             text-transform: uppercase;
         }
@@ -427,6 +427,41 @@
                 background-size: cover, cover, cover, 50vw auto;
                 background-position: center, center, center, top left;
             }
+        }
+
+        /* 5 cards layout for about samples */
+        @media (min-width: 992px) {
+
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row {
+                justify-content: center;
+            }
+
+            #hg-about-samples .hg-image-box {
+                margin-bottom: 10px;
+            }
+
+            /* 2 card đầu */
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(1),
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(2) {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            /* 3 card dưới */
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(3),
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(4),
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(5) {
+                flex: 0 0 33.333%;
+                max-width: 33.333%;
+            }
+
+            /* card dưới nhỏ lại chút cho cân */
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(3) .hg-image-box,
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(4) .hg-image-box,
+            #hg-about-samples .hg-row > .hg-col-lg-6 > .hg-row > div:nth-child(5) .hg-image-box {
+                padding-bottom: 72%;
+            }
+
         }
 
         /* --- CARD GRID DỊCH VỤ --- */
@@ -829,7 +864,7 @@
             height: auto;
             display: block;
             transition: 1s;
-            aspect-ratio: 1;
+            aspect-ratio: 1.33;
             object-fit: cover;
         }
 
@@ -873,119 +908,164 @@
         /* --- TESTIMONIAL CARD NEW STYLE --- */
         .hg-testi-card {
             background: #fff;
-            border-radius: 15px;
+            border-radius: 18px;
             overflow: hidden;
             height: 100%;
             display: flex;
             flex-direction: column;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             border: 1px solid #eee;
-            transition: 0.4s;
-        }
-        .hg-testi-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 18px rgba(0,0,0,0.08);
-            border-color: var(--htp-blue);
+            transition: 0.35s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
         }
 
-        /* Image Area */
+        .hg-testi-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+            border-color: rgba(var(--htp-blue-rgb),0.2);
+        }
+
+        /* Image */
         .hg-testi-img {
             width: 100%;
-            aspect-ratio: 3/2;
+            aspect-ratio: 870 / 1470;
             overflow: hidden;
+            background: #f3f3f3;
             position: relative;
         }
+
         .hg-testi-img img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: 1s;
-        }
-        .hg-testi-card:hover .hg-testi-img img {
-            transform: scale(1.1);
+            display: block;
+            transition: transform 0.8s ease;
         }
 
-        /* Content Area */
+        .hg-testi-card:hover .hg-testi-img img {
+            transform: scale(1.03);
+        }
+
+        /* Content */
         .hg-testi-body {
-            padding: 5px 15px 20px;
+            padding: 18px 16px 20px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
+            position: relative;
+        }
+
+        .hg-testi-quote {
+            position: absolute;
+            top: 5px;
+            right: 16px;
+
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+
+            background: rgba(var(--htp-blue-rgb), 0.08);
+            color: var(--htp-blue);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 13px;
+
+            transition: 0.3s ease;
+        }
+
+        .hg-testi-card:hover .hg-testi-quote {
+            background: var(--htp-blue);
+            color: #fff;
+            transform: rotate(-10deg) scale(1.08);
+        }
+
+        .hg-testi-name {
+            padding-right: 45px;
+        }
+
+        .hg-testi-name {
+            font-family: var(--font-title);
+            font-size: 15px;
+            line-height: 1.2;
+            color: var(--htp-dark);
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 4px;
         }
 
         .hg-testi-text {
-            font-size: 15px;
-            color: #555;
-            font-style: italic;
-            margin-bottom: 10px;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin: 0;
+
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
 
-        .hg-testi-footer {
-            margin-top: auto;
-            padding-top: 15px;
-            border-top: 1px dashed #eee;
-        }
-
-        .hg-testi-name {
-            display: block;
-            font-weight: 800;
-            font-size: 16px;
-            color: var(--htp-dark);
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-        .hg-testi-project {
-            display: block;
-            font-size: 12px;
-            color: var(--htp-blue);
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        /* Swiper Controls & Navigation */
+        /* Slider */
         .hg-testi-slider-wrap {
             position: relative;
-            padding: 0 40px 20px 40px;
+            padding: 0 40px 20px;
         }
 
         .swiper.hg-testi-swiper {
-            padding: 20px 20px 30px;
+            padding: 15px 10px 35px;
         }
-        
-        .swiper-button-next, .swiper-button-prev {
-            width: 45px;
-            height: 45px;
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            width: 46px;
+            height: 46px;
             background: #fff;
             border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             color: var(--htp-blue);
-            transition: 0.3s;
+            transition: 0.3s ease;
         }
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
+
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+            font-size: 16px;
+            font-weight: 900;
         }
-        .swiper-button-next:hover, .swiper-button-prev:hover {
+
+        .swiper-button-next:hover,
+        .swiper-button-prev:hover {
             background: var(--htp-blue);
             color: #fff;
         }
 
-        /* Canh chỉnh vị trí nút bấm */
-        .swiper-button-prev { left: -5px; }
-        .swiper-button-next { right: -5px; }
+        .swiper-button-prev {
+            left: -5px;
+        }
 
-        @media (max-width: 767px) {
-            .hg-testi-slider-wrap { padding: 0 10px 20px 10px; }
+        .swiper-button-next {
+            right: -5px;
         }
 
         .swiper-pagination-bullet-active {
             background: var(--htp-blue) !important;
             width: 25px !important;
             border-radius: 5px !important;
+        }
+
+        @media (max-width: 767px) {
+            .hg-testi-slider-wrap {
+                padding: 0 10px 20px;
+            }
+
+            .hg-testi-name {
+                font-size: 14px;
+            }
+
+            .hg-testi-text {
+                font-size: 13px;
+            }
         }
 
         
@@ -1141,6 +1221,185 @@
             .hg-feature-grid { justify-items: center; text-align: left; margin-top: 0;}
             .hg-form-box { padding: 10px 20px 30px; margin-top: 30px; }
         }
+
+        /* TEAM MEMBERS CAROUSEL */
+
+        #hg-architect-carousel {
+            background: #000;
+            padding: 20px 0 40px;
+            overflow: hidden;
+        }
+
+        .hg-architect-swiper {
+            overflow: visible;
+        }
+
+        .hg-architect-card {
+            background: #111;
+            border-radius: 18px;
+            overflow: hidden;
+            transition: all .35s ease;
+            height: 100%;
+        }
+
+        .hg-architect-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .hg-architect-image {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 2 / 3;
+            overflow: hidden;
+        }
+
+        .hg-architect-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .8s ease;
+        }
+
+        .hg-architect-card:hover .hg-architect-image img {
+            transform: scale(1.05);
+        }
+
+        .hg-architect-info {
+            padding: 18px 16px 20px;
+            text-align: center;
+        }
+
+        .hg-architect-name {
+            font-family: var(--font-title);
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            line-height: 1.3;
+        }
+
+        @media (max-width: 991px){
+            .hg-architect-name{
+                font-size: 14px;
+                text-wrap: balance;
+            }
+        }
+
+        .hg-architect-role {
+            font-size: 13px;
+            color: rgba(255,255,255,.7);
+            line-height: 1.5;
+            text-wrap: balance;
+        }
+
+        .hg-architect-swiper .swiper-pagination {
+            position: relative;
+            margin-top: 30px;
+        }
+
+        .hg-architect-swiper .swiper-pagination-bullet {
+            background: rgba(255,255,255,.4);
+            opacity: 1;
+        }
+
+        .hg-architect-swiper .swiper-pagination-bullet-active {
+            background: #fff !important;
+        }
+
+        .hg-architect-swiper .swiper-button-prev,
+        .hg-architect-swiper .swiper-button-next {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.08);
+            backdrop-filter: blur(6px);
+            transition: all .3s ease;
+            color: #fff;
+        }
+
+        .hg-architect-swiper .swiper-button-prev:hover,
+        .hg-architect-swiper .swiper-button-next:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .hg-architect-swiper .swiper-button-prev::after,
+        .hg-architect-swiper .swiper-button-next::after {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .hg-architect-swiper .swiper-button-prev {
+            left: -22px;
+        }
+
+        .hg-architect-swiper .swiper-button-next {
+            right: -22px;
+        }
+
+        @media(max-width: 991px) {
+            .hg-architect-swiper .swiper-button-prev,
+            .hg-architect-swiper .swiper-button-next {
+                display: none;
+            }
+        }
+
+        .hg-architect-swiper .swiper-wrapper {
+            transition-timing-function: ease !important;
+        }
+
+        .hg-architect-swiper {
+            cursor: grab;
+        }
+
+        .hg-architect-swiper:active {
+            cursor: grabbing;
+        }
+
+        /* HG SERVICE GALLERY */
+
+        #hg-service-gallery {
+            width: 100%;
+            padding-bottom: 4px;
+        }
+
+        .hg-service-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+        }
+
+        .hg-service-gallery-item {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 1 / 1;
+        }
+
+        .hg-service-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .7s ease;
+        }
+
+        .hg-service-gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        @media(min-width: 768px) {
+            .hg-service-gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(min-width: 992px) {
+            .hg-service-gallery-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
     </style>
 </head>
 <body>
@@ -1241,37 +1500,45 @@
             <div class="hg-row hg-justify-content-md-center hg-justify-content-lg-end">
                 
                 <div class="hg-col-lg-6 hg-col-md-9 hg-col-sm-12" style="padding-top: 25px;">
-                    <div class="hg-row">
+                    <div class="hg-row" style="justify-content: center;">
                         
                         <!-- Box 1 -->
-                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12">
+                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
-                                <img src="https://hongtamphat.com/wp-content/uploads/2025/11/7e3211d5e8ad64f33dbc-2048x1799.png" alt="Hồng Tâm Phát Sample">
-                                <div class="hg-image-overlay">DỊCH VỤ THI CÔNG TRỌN GÓI</div>
+                                <img src="/wp-content/uploads/2026/05/481176004_673347508687230_3952301993213672452_n.jpg" alt="Hồng Tâm Phát">
+                                <div class="hg-image-overlay">PHONG CÁCH THIẾT KẾ THANH NHÃ</div>
                             </div>
                         </div>
 
                         <!-- Box 2 -->
-                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12">
+                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
-                                <img src="https://hongtamphat.com/wp-content/uploads/2025/11/7e3211d5e8ad64f33dbc-2048x1799.png" alt="Hồng Tâm Phát Sample">
-                                <div class="hg-image-overlay">VẬT LIỆU CAO CẤP CHUẨN CHÂU</div>
+                                <img src="/wp-content/uploads/2026/05/tropical-flow-h-and-p-architects_10.jpg" alt="Hồng Tâm Phát">
+                                <div class="hg-image-overlay">PHONG CÁCH THIẾT KẾ THÔ MỘC</div>
                             </div>
                         </div>
 
                         <!-- Box 3 -->
-                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12">
+                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
-                                <img src="https://hongtamphat.com/wp-content/uploads/2025/11/7e3211d5e8ad64f33dbc-2048x1799.png" alt="Hồng Tâm Phát Sample">
-                                <div class="hg-image-overlay">THIẾT KẾ ĐỘC BẢN SANG TRỌNG</div>
+                                <img src="/wp-content/uploads/2026/05/bangsue-residence-patara-architects_13.jpg" alt="Hồng Tâm Phát">
+                                <div class="hg-image-overlay">PHONG CÁCH THIẾT KẾ TĨNH TẠI</div>
                             </div>
                         </div>
 
                         <!-- Box 4 -->
-                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12">
+                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
-                                <img src="https://hongtamphat.com/wp-content/uploads/2025/11/7e3211d5e8ad64f33dbc-2048x1799.png" alt="Hồng Tâm Phát Sample">
-                                <div class="hg-image-overlay">TỐI ƯU KHÔNG GIAN SỐNG MỚI</div>
+                                <img src="/wp-content/uploads/2026/05/architecture-of-water-disappearing-fixtures-in-contemporary-wellness_10.jpg" alt="Hồng Tâm Phát">
+                                <div class="hg-image-overlay">PHONG CÁCH THIẾT KẾ HUYỀN BÍ</div>
+                            </div>
+                        </div>
+
+                        <!-- Box 5 -->
+                        <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
+                            <div class="hg-image-box">
+                                <img src="/wp-content/uploads/2026/05/a-place-in-the-country-studio-ben-allen_29.jpg" alt="Hồng Tâm Phát">
+                                <div class="hg-image-overlay">PHONG CÁCH THIẾT KẾ NĂNG LƯỢNG</div>
                             </div>
                         </div>
 
@@ -1281,7 +1548,7 @@
         </div>
     </section>
 
-    <section id="hg-services-grid" style="padding: 40px 0;">
+    <section id="hg-services-grid" style="padding: 40px 0 10px;">
 
         <div class="hg-container">
             <!-- Header Section -->
@@ -1308,7 +1575,7 @@
                 <!-- Card 2 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
-                        <img src="/wp-content/uploads/2026/05/a-54.jpg" alt="Nội thất Nhà phố">
+                        <img src="/wp-content/uploads/2026/05/VDG-BRICK-V2-_Edmund_Sumner-052.jpg" alt="Nội thất Nhà phố">
                         <div class="hg-service-overlay">
                             <h3 class="hg-service-name">Nội thất<br>Nhà phố</h3>
                         </div>
@@ -1318,7 +1585,7 @@
                 <!-- Card 3 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
-                        <img src="/wp-content/uploads/2026/05/IMG_8863-HDR-Panorama-1.jpg" alt="Nội thất Căn hộ">
+                        <img src="/wp-content/uploads/2026/05/004_2.jpg" alt="Nội thất Căn hộ">
                         <div class="hg-service-overlay">
                             <h3 class="hg-service-name">Nội thất<br>Căn hộ</h3>
                         </div>
@@ -1338,7 +1605,7 @@
                 <!-- Card 5 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
-                        <img src="/wp-content/uploads/2026/05/casa-ma-rua-141-arquitetura_33.jpg" alt="Nội thất Rời">
+                        <img src="/wp-content/uploads/2026/05/lds-residence-i-davidov-architects_6.jpg" alt="Nội thất Rời">
                         <div class="hg-service-overlay">
                             <h3 class="hg-service-name">Nội thất<br>Rời</h3>
                         </div>
@@ -1348,7 +1615,7 @@
                 <!-- Card 6 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
-                        <img src="/wp-content/uploads/2026/05/RATHER_TWO_DORONxOMAMBO_25_Horizontal_OKS.jpg" alt="Nội thất Trang trí">
+                        <img src="/wp-content/uploads/2026/05/Screenshot-2026-04-28 161242.png" alt="Nội thất Trang trí">
                         <div class="hg-service-overlay">
                             <h3 class="hg-service-name">Nội thất<br>Trang trí</h3>
                         </div>
@@ -1357,6 +1624,62 @@
 
             </div>
         </div>
+    </section>
+
+    <section id="hg-service-gallery">
+
+        <div class="hg-service-gallery-grid">
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(1).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(2).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(3).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(4).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(5).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(6).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(7).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(8).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(9).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(10).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(11).jpg" alt="">
+            </div>
+
+            <div class="hg-service-gallery-item">
+                <img src="/wp-content/uploads/2026/05/Cong-trinh-(12).jpg" alt="">
+            </div>
+
+        </div>
+
     </section>
 
     <section id="hg-why-choose-us" style="position: relative; padding: 50px 0; overflow: hidden; background: var(--htp-dark);">
@@ -1431,7 +1754,7 @@
         </div>
     </section>
 
-    <section id="hg-teams-grid" style="padding: 40px 0 20px; background-color: #f9f9f9;">
+    <section id="hg-teams-grid" style="padding: 40px 0 0; background-color: #f9f9f9;">
 
         <div class="hg-container">
             <!-- Header Section -->
@@ -1481,6 +1804,154 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section id="hg-architect-carousel">
+
+        <div class="hg-container">
+
+            <div class="swiper hg-architect-swiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/kien-truc-su-htp.png" alt="KTS. Lê Thị Quỳnh Như">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">KTS. Lê Thị Quỳnh Như</div>
+                                <div class="hg-architect-role">Bộ phận Thiết kế</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/kien-truc-su-cty-htp.png" alt="KTS. Trần Hoàng Duy">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">KTS. Trần Hoàng Duy</div>
+                                <div class="hg-architect-role">Bộ phận Thiết kế</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/pho-giam-doc-htp.png" alt="Nguyễn Văn Tuân">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">Nguyễn Văn Tuân</div>
+                                <div class="hg-architect-role">Phó Giám đốc Công ty</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/giam-doc-cty-htp-1.png" alt="Trần Văn Hưng">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">Trần Văn Hưng</div>
+                                <div class="hg-architect-role">Giám đốc Công ty</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/tro-ly-htp-1.png" alt="Bùi Thanh Lan">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">Bùi Thanh Lan</div>
+                                <div class="hg-architect-role">Trợ lý Giám đốc</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/Le-Duc-Huy.png" alt="Lê Đức Huy">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">Lê Đức Huy</div>
+                                <div class="hg-architect-role">Bộ phận Kinh doanh</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/Nguyen-Tu-Doanh.png" alt="KS. Nguyễn Tư Doanh">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">KS. Nguyễn Tư Doanh</div>
+                                <div class="hg-architect-role">Bộ phận Thi công</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/Nguyen-Cong-Minh.png" alt="KS. Nguyễn Công Minh">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">KS. Nguyễn Công Minh</div>
+                                <div class="hg-architect-role">Bộ phận Thi công</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/bo-phan-mo-duong-htp.png" alt="KS. Nguyễn Thế Duy">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">KS. Nguyễn Thế Duy</div>
+                                <div class="hg-architect-role">Bộ phận Thi công</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="hg-architect-card">
+                            <div class="hg-architect-image">
+                                <img src="/wp-content/uploads/2026/05/bo-phan-ban-hang.png" alt="Nguyễn Thị Thanh Diệp">
+                            </div>
+
+                            <div class="hg-architect-info">
+                                <div class="hg-architect-name">Nguyễn Thị Thanh Diệp</div>
+                                <div class="hg-architect-role">Bộ phận Bán hàng</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="swiper-button-prev hg-architect-prev"></div>
+                <div class="swiper-button-next hg-architect-next"></div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+
         </div>
     </section>
     
@@ -1559,7 +2030,7 @@
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
-                            <img src="https://hongtamphat.com/wp-content/uploads/2025/01/z5642257735061_13dfb44986c25be56f0260aa62e86c82-e1736737360940.jpg" alt="Thi công">
+                            <img src="/wp-content/uploads/2026/05/30.11.jpg" alt="Thi công">
                             <div class="hg-process-number">5</div>
                         </div>
                         <div class="hg-process-info-under">
@@ -1646,7 +2117,7 @@
                 <div class="hg-col-lg-6 hg-col-md-10">
                     <div class="hg-warranty-image-col">
                         <div class="hg-war-img-box">
-                            <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Nhân viên Hồng Tâm Phát bảo trì nội thất">
+                            <img src="/wp-content/uploads/2026/05/30.5.jpg" alt="Nhân viên Hồng Tâm Phát bảo trì nội thất">
                         </div>
                     </div>
                 </div>
@@ -1670,103 +2141,294 @@
             <div class="hg-testi-slider-wrap">
                 <div class="swiper hg-testi-swiper">
                     <div class="swiper-wrapper">
+                        <!-- CARD 1 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH1.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Chị Bích</div>
+                                    <p class="hg-testi-text">Hỗ trợ rõ ràng, bảo hành đầy đủ và chăm sóc khách hàng rất có tâm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 2 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH2.1.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Lê</div>
+                                    <p class="hg-testi-text">Thi công đúng hẹn, hỗ trợ nhanh và phối hợp làm việc rất thuận lợi.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 3 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH2.2.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Lê</div>
+                                    <p class="hg-testi-text">Công trình hoàn thiện đúng cam kết, hỗ trợ bảo hành rất yên tâm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 4 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH3.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Chị Hà</div>
+                                    <p class="hg-testi-text">Cách phục vụ chuyên nghiệp và tư duy làm việc khiến mình rất tin tưởng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 5 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH4.1.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Huy</div>
+                                    <p class="hg-testi-text">Nội dung và định hướng dịch vụ rất hay, chuyên nghiệp và khác biệt.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 6 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH4.2.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Huy</div>
+                                    <p class="hg-testi-text">Tư vấn kỹ, hỗ trợ gần gũi và tạo cảm giác rất đáng tin tưởng.</p>
+                                </div>
+                            </div>
+                        </div>
                         
-                        <!-- Card 1 -->
+                        <!-- CARD 7 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án biệt thự">
+                                    <img src="/wp-content/uploads/2026/05/KH5.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Đội ngũ thi công chuyên nghiệp, tỉ mỉ từng chi tiết nhỏ nhất cho căn biệt thự của gia đình tôi. Rất hài lòng!"</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Anh Hoàng Nam</span>
-                                        <span class="hg-testi-project">Villa Quận 2</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Chị Vân</div>
+                                    <p class="hg-testi-text">Thi công đúng tiến độ, xử lý chi tiết cẩn thận và cực kỳ chỉnh chu.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 2 -->
+                        <!-- CARD 8 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án Penthouse">
+                                    <img src="/wp-content/uploads/2026/05/KH6.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Chế độ bảo hành kỷ niệm rất đặc biệt. Nhân viên luôn chủ động liên hệ bảo trì đúng lịch, tôi không cần lo lắng gì."</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Chị Minh Thư</span>
-                                        <span class="hg-testi-project">Penthouse Vinhomes</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Chị Vân</div>
+                                    <p class="hg-testi-text">Thi công đẹp, hỗ trợ nhanh và quá trình làm việc rất chuyên nghiệp.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 3 -->
+                        <!-- CARD 9 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án Sky Garden">
+                                    <img src="/wp-content/uploads/2026/05/KH7.1.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Vật liệu gỗ An Cường chuẩn, bề mặt hoàn thiện sang trọng. Cảm ơn HTP đã giúp tôi có không gian sống như ý."</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Anh Quốc Bảo</span>
-                                        <span class="hg-testi-project">Sky Garden III</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Chị Trang</div>
+                                    <p class="hg-testi-text">Luôn chủ động cập nhật tiến độ và hỗ trợ mọi việc rất nhanh chóng.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 4 -->
+                        <!-- CARD 10 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án Sala">
+                                    <img src="/wp-content/uploads/2026/05/KH7.2.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Tiến độ thi công nhanh chóng, bàn giao sớm hơn dự kiến. Quy trình làm việc rất minh bạch và chuyên nghiệp."</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Anh Tiến Dũng</span>
-                                        <span class="hg-testi-project">Shophouse Sala</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Chị Trang</div>
+                                    <p class="hg-testi-text">Thiết kế hiện đại, tối ưu công năng và hoàn thiện rất đúng mong đợi.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 5 -->
+                        <!-- CARD 11 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án Spa">
+                                    <img src="/wp-content/uploads/2026/05/KH7.3.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Thiết kế độc bản, tối ưu diện tích cực tốt cho việc kinh doanh. Kiến trúc sư cực kỳ có tâm."</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Chị Thanh Vân</span>
-                                        <span class="hg-testi-project">Organic Spa HCM</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Chị Trang</div>
+                                    <p class="hg-testi-text">Công trình thực tế đẹp hơn phối cảnh và hoàn thiện rất chất lượng.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Card 6 -->
+                        <!-- CARD 12 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
-                                    <img src="https://hongtamphat.com/wp-content/uploads/2024/10/triet-ly-la-gi-nguon-htp.png" alt="Dự án nhà phố">
+                                    <img src="/wp-content/uploads/2026/05/KH8.1.jpg" alt="Review khách hàng">
                                 </div>
                                 <div class="hg-testi-body">
-                                    <p class="hg-testi-text">"Chi phí rất hợp lý so với chất lượng vật liệu cao cấp. Sẽ tiếp tục ủng hộ HTP trong các công trình tới."</p>
-                                    <div class="hg-testi-footer">
-                                        <span class="hg-testi-name">Anh Hữu Phước</span>
-                                        <span class="hg-testi-project">Nhà phố Thủ Đức</span>
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
                                     </div>
+                                    <div class="hg-testi-name">Bác Sĩ</div>
+                                    <p class="hg-testi-text">Quy trình rõ ràng, báo giá minh bạch và hỗ trợ cực kỳ nhiệt tình.</p>
                                 </div>
                             </div>
                         </div>
 
+                        
+                        <!-- CARD 13 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH8.2.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Bác Sĩ</div>
+                                    <p class="hg-testi-text">Triển khai nhanh, xử lý phát sinh linh hoạt và làm việc rất trách nhiệm.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 14 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH9.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Duyệt</div>
+                                    <p class="hg-testi-text">Không gian hoàn thiện đẹp, hiện đại và chăm chút từng chi tiết nhỏ.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 15 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH10.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Chị Hiền</div>
+                                    <p class="hg-testi-text">Đội ngũ chuyên nghiệp, đúng cam kết và phối hợp làm việc rất dễ dàng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 16 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH11.1.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Phú</div>
+                                    <p class="hg-testi-text">Chính sách bảo hành rõ ràng và hỗ trợ sau thi công rất chu đáo.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 17 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH11.2.jpg" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Phú</div>
+                                    <p class="hg-testi-text">Tư vấn có tâm, giải pháp phù hợp và trải nghiệm làm việc rất hài lòng.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CARD 18 -->
+                        <div class="swiper-slide">
+                            <div class="hg-testi-card">
+                                <div class="hg-testi-img">
+                                    <img src="/wp-content/uploads/2026/05/KH12.png" alt="Review khách hàng">
+                                </div>
+                                <div class="hg-testi-body">
+                                    <div class="hg-testi-quote">
+                                        <i class="fa-solid fa-quote-right"></i>
+                                    </div>
+                                    <div class="hg-testi-name">Anh Phú</div>
+                                    <p class="hg-testi-text">Luôn cập nhật tiến độ rõ ràng và hoàn thiện công trình rất đúng ý.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -1889,6 +2551,44 @@
             }
         });
     });
+</script>
+<script>
+new Swiper(".hg-architect-swiper", {
+
+    slidesPerView: 2,
+    spaceBetween: 16,
+    loop: true,
+    speed: 800,
+    grabCursor: true,
+
+    autoplay: {
+        delay: 1500,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+    },
+
+    pagination: {
+        el: ".hg-architect-swiper .swiper-pagination",
+        clickable: true,
+    },
+
+    navigation: {
+        nextEl: ".hg-architect-next",
+        prevEl: ".hg-architect-prev",
+    },
+
+    breakpoints: {
+        768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+        },
+
+        992: {
+            slidesPerView: 4,
+            spaceBetween: 24,
+        }
+    }
+});
 </script>
 
 </body>
