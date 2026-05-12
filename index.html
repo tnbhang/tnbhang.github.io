@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hồng Tâm Phát</title>
     
-    <!-- Fonts & Library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Mulish:wght@400;700&family=Roboto+Flex:wght@800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -371,7 +370,7 @@
             background-image: 
                 linear-gradient(to bottom, #fff 0, transparent 5vw),
                 linear-gradient(to bottom, transparent 45vw, #fff 55vw), 
-                url('/wp-content/uploads/2026/05/Gemini_Generated_Image_nfb5cpnfb5cpnfb5.png');
+                url('./wp-content/uploads/2026/05/Gemini_Generated_Image_nfb5cpnfb5cpnfb5.png');
             background-size: cover, cover, 100% auto;
             background-position: top center;
             background-repeat: no-repeat;
@@ -423,7 +422,7 @@
                     linear-gradient(to bottom, #fff 0, transparent 5%),
                     linear-gradient(to left, rgba(var(--htp-blue-rgb),.1), transparent 40%), 
                     linear-gradient(to left, #fff 51%, transparent 60%), 
-                    url('/wp-content/uploads/2026/05/Gemini_Generated_Image_nfb5cpnfb5cpnfb5.png');
+                    url('./wp-content/uploads/2026/05/Gemini_Generated_Image_nfb5cpnfb5cpnfb5.png');
                 background-size: cover, cover, cover, 50vw auto;
                 background-position: center, center, center, top left;
             }
@@ -464,7 +463,7 @@
 
         }
 
-        /* --- CARD GRID DỊCH VỤ --- */
+        /* --- CARD GRID DỊCH VỤ - ĐÃ SỬA THEO YÊU CẦU --- */
         .hg-service-card {
             position: relative;
             margin-bottom: 30px;
@@ -480,25 +479,25 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: transform 0.7s cubic-bezier(0.19, 1, 0.22, 1), filter 0.5s ease;
         }
 
-        /* OVERLAY: Ẩn mặc định */
+        /* OVERLAY: Hiển thị 100% mặc định với rgba(0,0,0,.5) */
         .hg-service-overlay {
             position: absolute;
             top: 0; left: 0; 
             width: 100%; height: 100%;
-            background: rgba(var(--htp-dark-rgb), 0.85);
+            background: rgba(0, 0, 0, 0.5); /* Overlay mặc định 0.5 */
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
-            opacity: 0;
+            opacity: 1; /* Hiện mặc định */
             transition: all 0.5s ease;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(0px);
         }
 
-        /* TEXT TÊN DỊCH VỤ */
+        /* TEXT TÊN DỊCH VỤ: Hiển thị 100% */
         .hg-service-name {
             color: #fff;
             font-family: var(--font-title);
@@ -507,7 +506,7 @@
             text-transform: uppercase;
             text-align: center;
             margin: 0;
-            transform: translateY(20px);
+            transform: scale(1); /* Tỷ lệ gốc */
             transition: transform 0.5s ease;
             line-height: 1.3;
         }
@@ -515,14 +514,15 @@
         /* HOVER STATES */
         .hg-service-card:hover img {
             transform: scale(1.1);
+            filter: blur(2px); /* Hình mờ đi khi hover */
         }
 
         .hg-service-card:hover .hg-service-overlay {
-            opacity: 1;
+            background: rgba(0, 0, 0, 0.8); /* Overlay đậm hơn khi hover */
         }
 
         .hg-service-card:hover .hg-service-name {
-            transform: translateY(0);
+            transform: scale(1.1); /* Text zoom nhẹ */
         }
 
         /* Responsive điều chỉnh font size */
@@ -534,7 +534,7 @@
         .hg-why-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: url('/wp-content/uploads/2026/05/IMG_1078_ph_alessiomei.jpg');
+            background-image: url('./wp-content/uploads/2026/05/IMG_1078_ph_alessiomei.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -1412,35 +1412,30 @@
                 <div class="swiper hero-swiper-fast">
                     <div class="swiper-wrapper">
                         
-                        <!-- SLIDE 1 -->
                         <div class="swiper-slide">
                             <img src="/wp-content/uploads/2026/05/trim-house-robert-konieczny-plus-kwk-promes_11.jpg" alt="Phong cách Thanh Nhã">
                             <div class="hg-project-caption"><span>PHONG CÁCH</span><br><span>THANH NHÃ</span></div>
                             <div class="hg-slide-overlay" style="background: linear-gradient(to right, rgba(101, 180, 226, 0.95) 20%, rgba(101, 180, 226, 0.5) 100%);"></div>
                         </div>
 
-                        <!-- SLIDE 2 -->
                         <div class="swiper-slide">
                             <img src="/wp-content/uploads/2026/05/024.jpg" alt="Phong cách Thô Mộc">
                             <div class="hg-project-caption"><span>PHONG CÁCH</span><br><span>THÔ MỘC</span></div>
                             <div class="hg-slide-overlay" style="background: linear-gradient(to right, rgba(119, 74, 1, 0.95) 20%, rgba(119, 74, 1, 0.4) 100%);"></div>
                         </div>
                         
-                        <!-- SLIDE 3 -->
                         <div class="swiper-slide">
                             <img src="/wp-content/uploads/2026/05/Constanze_Ladner_Haus_SNB_21.jpg" alt="Phong cách Tĩnh Tại">
                             <div class="hg-project-caption"><span>PHONG CÁCH</span><br><span>TĨNH TẠI</span></div>
                             <div class="hg-slide-overlay" style="background: linear-gradient(to right, rgba(33, 8, 3, 0.95) 20%, rgba(33, 8, 3, 0.5) 100%);"></div>
                         </div>
 
-                        <!-- SLIDE 4 -->
                         <div class="swiper-slide">
                             <img src="/wp-content/uploads/2026/05/TM_T-House_066.jpg" alt="Phong cách Huyền Bí">
                             <div class="hg-project-caption"><span>PHONG CÁCH</span><br><span>HUYỀN BÍ</span></div>
                             <div class="hg-slide-overlay" style="background: linear-gradient(to right, rgba(22, 22, 22, 0.95) 20%, rgba(22, 22, 22, 0.4) 100%);"></div>
                         </div>
                         
-                        <!-- SLIDE 5 -->
                         <div class="swiper-slide">
                             <img src="/wp-content/uploads/2026/05/ki-residence-studio-sanshou_19.jpg" alt="Phong cách Năng Lượng">
                             <div class="hg-project-caption"><span>PHONG CÁCH</span><br><span>NĂNG LƯỢNG</span></div>
@@ -1502,7 +1497,6 @@
                 <div class="hg-col-lg-6 hg-col-md-9 hg-col-sm-12" style="padding-top: 25px;">
                     <div class="hg-row" style="justify-content: center;">
                         
-                        <!-- Box 1 -->
                         <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
                                 <img src="/wp-content/uploads/2026/05/481176004_673347508687230_3952301993213672452_n.jpg" alt="Hồng Tâm Phát">
@@ -1510,7 +1504,6 @@
                             </div>
                         </div>
 
-                        <!-- Box 2 -->
                         <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
                                 <img src="/wp-content/uploads/2026/05/tropical-flow-h-and-p-architects_10.jpg" alt="Hồng Tâm Phát">
@@ -1518,7 +1511,6 @@
                             </div>
                         </div>
 
-                        <!-- Box 3 -->
                         <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
                                 <img src="/wp-content/uploads/2026/05/bangsue-residence-patara-architects_13.jpg" alt="Hồng Tâm Phát">
@@ -1526,7 +1518,6 @@
                             </div>
                         </div>
 
-                        <!-- Box 4 -->
                         <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
                                 <img src="/wp-content/uploads/2026/05/architecture-of-water-disappearing-fixtures-in-contemporary-wellness_10.jpg" alt="Hồng Tâm Phát">
@@ -1534,7 +1525,6 @@
                             </div>
                         </div>
 
-                        <!-- Box 5 -->
                         <div class="hg-col-lg-6 hg-col-sm-6 hg-col-xs-12" style="padding-right: 5px; padding-left: 5px;">
                             <div class="hg-image-box">
                                 <img src="/wp-content/uploads/2026/05/a-place-in-the-country-studio-ben-allen_29.jpg" alt="Hồng Tâm Phát">
@@ -1551,7 +1541,6 @@
     <section id="hg-services-grid" style="padding: 40px 0 10px;">
 
         <div class="hg-container">
-            <!-- Header Section -->
             <div class="hg-header">
                 <div class="hg-title-wrapper">
                     <span class="sub-top">Kiến tạo đẳng cấp</span>
@@ -1562,7 +1551,6 @@
 
             <div class="hg-row hg-justify-content-center">
                 
-                <!-- Card 1 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/0696.jpg" alt="Nội thất Biệt thự">
@@ -1572,7 +1560,6 @@
                     </div>
                 </div>
 
-                <!-- Card 2 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/VDG-BRICK-V2-_Edmund_Sumner-052.jpg" alt="Nội thất Nhà phố">
@@ -1582,7 +1569,6 @@
                     </div>
                 </div>
 
-                <!-- Card 3 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/004_2.jpg" alt="Nội thất Căn hộ">
@@ -1592,7 +1578,6 @@
                     </div>
                 </div>
 
-                <!-- Card 4 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/st-kilda-residence-addarc_42.jpg" alt="Nội thất Liên khối">
@@ -1602,7 +1587,6 @@
                     </div>
                 </div>
 
-                <!-- Card 5 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/lds-residence-i-davidov-architects_6.jpg" alt="Nội thất Rời">
@@ -1612,7 +1596,6 @@
                     </div>
                 </div>
 
-                <!-- Card 6 -->
                 <div class="hg-col-lg-4 hg-col-md-6 hg-col-12">
                     <div class="hg-service-card">
                         <img src="/wp-content/uploads/2026/05/Screenshot-2026-04-28 161242.png" alt="Nội thất Trang trí">
@@ -1687,8 +1670,7 @@
         <div class="hg-why-overlay"></div>
 
         <div class="hg-container hg-why-content">
-            <!-- Header -->
-             <div class="hg-header">
+            <div class="hg-header">
                 <div class="hg-title-wrapper">
                     <span class="sub-top">Vững tin thương hiệu</span>
                     <h2>6 Lý Do Hồng Tâm Phát Được Khách Hàng<br>Tin Chọn Suốt 12 Năm</h2>
@@ -1698,7 +1680,6 @@
 
             <div class="hg-reasons-list">
                 
-                <!-- Lý do 1: -->
                 <div class="hg-reason-item hg-reason-left">
                     <i class="fa-solid fa-pen-ruler"></i>
                     <div class="hg-reason-text">
@@ -1706,7 +1687,6 @@
                     </div>
                 </div>
 
-                <!-- Lý do 2: -->
                 <div class="hg-reason-item hg-reason-right">
                     <i class="fa-solid fa-microscope"></i>
                     <div class="hg-reason-text">
@@ -1714,7 +1694,6 @@
                     </div>
                 </div>
 
-                <!-- Lý do 3: -->
                 <div class="hg-reason-item hg-reason-left">
                     <i class="fa-solid fa-users-gear"></i>
                     <div class="hg-reason-text">
@@ -1722,7 +1701,6 @@
                     </div>
                 </div>
 
-                <!-- Lý do 4: -->
                 <div class="hg-reason-item hg-reason-right">
                     <i class="fa-solid fa-calendar-check"></i>
                     <div class="hg-reason-text">
@@ -1730,7 +1708,6 @@
                     </div>
                 </div>
 
-                <!-- Lý do 5: -->
                 <div class="hg-reason-item hg-reason-left">
                     <i class="fa-solid fa-file-shield"></i>
                     <div class="hg-reason-text">
@@ -1738,7 +1715,6 @@
                     </div>
                 </div>
 
-                <!-- Lý do 6: -->
                 <div class="hg-reason-item hg-reason-right">
                     <i class="fa-solid fa-handshake-angle"></i>
                     <div class="hg-reason-text">
@@ -1757,7 +1733,6 @@
     <section id="hg-teams-grid" style="padding: 40px 0 0; background-color: #f9f9f9;">
 
         <div class="hg-container">
-            <!-- Header Section -->
             <div class="hg-header">
                 <div class="hg-title-wrapper">
                     <span class="sub-top">Đội ngũ tinh hoa</span>
@@ -1768,7 +1743,6 @@
 
             <div class="hg-row hg-justify-content-center">
                 
-                <!-- Card 1 -->
                 <div class="hg-col-lg-3 hg-col-md-6 hg-col-12" style="margin-bottom: 30px;">
                     <div class="hg-team-card">
                         <div class="hg-team-icon"><i class="fa-solid fa-compass-drafting"></i></div>
@@ -1777,7 +1751,6 @@
                     </div>
                 </div>
                 
-                <!-- Card 2 -->
                 <div class="hg-col-lg-3 hg-col-md-6 hg-col-12" style="margin-bottom: 30px;">
                     <div class="hg-team-card">
                         <div class="hg-team-icon"><i class="fa-solid fa-ruler-combined"></i></div>
@@ -1786,7 +1759,6 @@
                     </div>
                 </div>
                 
-                <!-- Card 3 -->
                 <div class="hg-col-lg-3 hg-col-md-6 hg-col-12" style="margin-bottom: 30px;">
                     <div class="hg-team-card">
                         <div class="hg-team-icon"><i class="fa-solid fa-hard-hat"></i></div>
@@ -1795,7 +1767,6 @@
                     </div>
                 </div>
                 
-                <!-- Card 4 -->
                 <div class="hg-col-lg-3 hg-col-md-6 hg-col-12" style="margin-bottom: 30px;">
                     <div class="hg-team-card">
                         <div class="hg-team-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
@@ -1958,7 +1929,6 @@
     <section id="hg-sync-process" style="padding: 40px 0 20px; background: #fff;">
         <div class="hg-process-container">
             
-            <!-- Header Section -->
             <div class="hg-header">
                 <div class="hg-title-wrapper">
                     <span class="sub-top">Đối tác tin cậy</span>
@@ -1967,10 +1937,8 @@
                 </div>
             </div>
 
-            <!-- Grid -->
             <div class="hg-process-grid">
                 
-                <!-- Bước 1 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -1984,7 +1952,6 @@
                     </div>
                 </div>
 
-                <!-- Bước 2 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -1998,7 +1965,6 @@
                     </div>
                 </div>
 
-                <!-- Bước 3 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -2012,7 +1978,6 @@
                     </div>
                 </div>
 
-                <!-- Bước 4 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -2026,7 +1991,6 @@
                     </div>
                 </div>
 
-                <!-- Bước 5 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -2040,7 +2004,6 @@
                     </div>
                 </div>
 
-                <!-- Bước 6 -->
                 <div class="hg-process-col">
                     <div class="hg-process-card-wrap">
                         <div class="hg-process-card">
@@ -2065,7 +2028,6 @@
                 
                 <div class="hg-col-lg-6 hg-col-md-12">
                     
-                    <!-- Header Section -->
                     <div class="hg-header">
                         <div class="hg-title-wrapper">
                             <span class="sub-top">Cam kết từ tâm</span>
@@ -2076,7 +2038,6 @@
 
                     <div class="hg-warranty-content">
                         <div class="hg-warranty-list">
-                            <!-- Mục 1 -->
                             <div class="hg-warranty-item">
                                 <div class="hg-warranty-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
@@ -2087,7 +2048,6 @@
                                 </div>
                             </div>
 
-                            <!-- Mục 2 -->
                             <div class="hg-warranty-item">
                                 <div class="hg-warranty-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -2098,7 +2058,6 @@
                                 </div>
                             </div>
 
-                            <!-- Mục 3 -->
                             <div class="hg-warranty-item">
                                 <div class="hg-warranty-icon">
                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
@@ -2129,7 +2088,6 @@
     <section id="hg-testimonials" style="padding: 40px 0 20px;">
         <div class="hg-container">
             
-            <!-- Header Section -->
             <div class="hg-header" style="margin-bottom: 20px;">
                 <div class="hg-title-wrapper">
                     <span class="sub-top">Review từ gia chủ</span>
@@ -2141,7 +2099,6 @@
             <div class="hg-testi-slider-wrap">
                 <div class="swiper hg-testi-swiper">
                     <div class="swiper-wrapper">
-                        <!-- CARD 1 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2157,7 +2114,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 2 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2173,7 +2129,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 3 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2189,7 +2144,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 4 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2205,7 +2159,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 5 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2221,7 +2174,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 6 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2237,7 +2189,6 @@
                             </div>
                         </div>
                         
-                        <!-- CARD 7 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2253,7 +2204,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 8 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2269,7 +2219,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 9 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2285,7 +2234,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 10 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2301,7 +2249,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 11 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2317,7 +2264,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 12 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2334,7 +2280,6 @@
                         </div>
 
                         
-                        <!-- CARD 13 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2350,7 +2295,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 14 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2366,7 +2310,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 15 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2382,7 +2325,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 16 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2398,7 +2340,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 17 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2414,7 +2355,6 @@
                             </div>
                         </div>
 
-                        <!-- CARD 18 -->
                         <div class="swiper-slide">
                             <div class="hg-testi-card">
                                 <div class="hg-testi-img">
@@ -2432,11 +2372,9 @@
                     </div>
                 </div>
                 
-                <!-- Navigation Arrows -->
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
 
-                <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
         </div>
